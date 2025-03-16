@@ -35,3 +35,46 @@ function doGet(e) {
   return ContentService.createTextOutput(translate(e.parameter.text));
 }
 ```
+
+### **3️⃣ Deploy sebagai Web App**
+
+1. Klik **"Deploy"** > **"New deployment"**
+2. Pilih **"Web App"**
+3. Pada bagian **"Who has access"**, pilih **"Anyone"**
+4. Klik **"Deploy"**
+5. Salin **URL Web App** yang diberikan
+
+---
+
+# 🛠️ **Cara Menggunakan API di Frontend**
+
+Setelah mendapatkan URL Web App, Anda bisa menggunakan `fetch()` untuk menerjemahkan teks dari **English** → **Polish** di frontend.
+
+```javascript
+async function translateText(text) {
+  const apiUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL?text=" + encodeURIComponent(text);
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error("Terjadi kesalahan!");
+
+    const translatedText = await response.text();
+    console.log("Terjemahan:", translatedText);
+    return translatedText;
+  } catch (error) {
+    console.error("Error:", error);
+    return text;
+  }
+}
+
+// Contoh penggunaan
+translateText("Good morning").then(console.log);
+```
+
+## ⚡ **Keuntungan Menggunakan Proxy Ini**
+
+✅ **Melewati Rate Limit Google Translate API**
+✅ **Tidak membutuhkan API Key**
+✅ **Dapat digunakan langsung di Frontend tanpa backend**
+
+🚀 **Coba setup sekarang dan nikmati terjemahan tanpa batas!**
