@@ -73,8 +73,8 @@ translateText("Good morning").then(console.log);
 
 ## ⚡ **Keuntungan Menggunakan Proxy Ini**
 
-✅ **Melewati Rate Limit Google Translate API**
-✅ **Tidak membutuhkan API Key**
+✅ **Melewati Rate Limit Google Translate API**  
+✅ **Tidak membutuhkan API Key**  
 ✅ **Dapat digunakan langsung di Frontend tanpa backend**
 
 🚀 **Coba setup sekarang dan nikmati terjemahan tanpa batas!**
